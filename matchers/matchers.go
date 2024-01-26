@@ -39,7 +39,7 @@ func createSimple[T any](fn func(x T) bool, desc string, args ...any) Matcher[T]
 }
 
 func Eq[T comparable](v T) Matcher[T] {
-	return createSimple(func(x T) bool { return x == v }, "is equal to %v", v)
+	return createSimple(func(x T) bool { return x == v }, "%v", v)
 }
 
 func Ge[T constraints.Ordered](v T) Matcher[T] {
